@@ -33,6 +33,7 @@ python - <<END
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('words')
 END
 }
 
