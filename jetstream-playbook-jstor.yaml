@@ -1,0 +1,115 @@
+---
+# run this script as: `sudo ansible-playbook jetstream-playbook.yaml`
+# run this first: `sudo ansible-galaxy install cmprescott.chrome`
+
+
+- hosts: localhost
+  roles:
+     - { role: cmprescott.chrome, become: yes }
+  tasks:
+    # Check if user permissions for passwordless sudo are set up correctly:
+    - lineinfile:
+        path: /etc/sudoers.d/90-cloud-init-users
+        line: "%admin ALL=(ALL) NOPASSWD:ALL"
+
+    - lineinfile:
+        path: /etc/sudoers.d/90-cloudimg-ubuntu
+        line: "%admin ALL=(ALL) NOPASSWD:ALL"
+
+    # Remove line (usually at end of file) that would negate passwordless sudo access for all admins
+    - lineinfile:
+        path: /etc/sudoers
+        regexp: '^%users ALL=(ALL) ALL'
+        state: absent
+
+    # TO DO: Automatically delete any occurrences of `%users ALL=(ALL) ALL` that occur in /etc/sudoers (use lineinfile for this?)
+
+    # Set up users and groups:
+    - user:
+        name: jhaber
+        uid: 1000
+        comment: "Jaren Haber"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: aculich
+        uid: 1001
+        comment: "Aaron Culich"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: h2
+        uid: 1020
+        comment: "Heather Haveman"
+        groups: users,admin,docker
+        shell: /bin/bash 
+    - user:
+        name: yoonsunghong
+        uid: 1021
+        comment: "Yoon Sung Hong"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: zekaifan
+        uid: 1022
+        comment: "Zekai Fan"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: rudyvenguswamy
+        uid: 1023
+        comment: "Rudy Venguswamy"
+        groups: users,admin,docker
+        shell: /bin/bash
+
+
+#    - name: Set authorized key took from url
+    - authorized_key:
+        user: jhaber
+        state: present
+        key: https://github.com/jhaber-zz.keys
+    - authorized_key:
+        user: aculich
+        state: present
+        key: https://github.com/aculich.keys
+    - authorized_key:
+        user: h2
+        state: present
+        key: https://github.com/HeatherHaveman.keys
+    - authorized_key:
+        user: yoonsunghong
+        state: present
+        key: https://github.com/yoonsunghong.keys
+    - authorized_key:
+        user: zekaifan
+        state: present
+        key: https://github.com/babybear68.keys
+    - authorized_key:
+        user: rudyvenguswamy
+        state: present
+        key: https://github.com/RudyVenguswamy.keys
+
+
+    - copy:
+        src: charter-school-notebook-server
+        dest: /usr/local/bin/charter-school-notebook-server
+        owner: root
+        group: root
+        mode: 0755
+
+    - copy:
+        src: kill-charter-school-containers
+        dest: /usr/local/sbin/kill-charter-school-containers
+        owner: root
+        group: root
+        mode: 0755
+
+    - copy:
+        src: cron-kill-containers
+        dest: /etc/cron.d/kill-containers       
+        owner: root
+        group: root
+        mode: 0644
+
+  # This line keeps the procedure from stopping due to users already existing
+  ignore_errors: yes
