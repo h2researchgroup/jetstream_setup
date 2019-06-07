@@ -109,6 +109,18 @@
         comment: "Kanika Ahluwalia"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: annanguyen
+        uid: 1020
+        comment: "Anna Nguyen"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: henryleou
+        uid: 1021
+        comment: "Henry Leou"
+        groups: users,admin,docker
+        shell: /bin/bash        
 
 
 #    - name: Set authorized key took from url
@@ -167,6 +179,14 @@
         user: kwalia
         state: present
         key: https://github.com/kwalia1999.keys
+    - authorized_key: 
+        user: annanguyen
+        state: present
+        key: https://github.com/Annanguyenn.keys
+    - authorized_key: 
+        user: henryleou
+        state: present
+        key: https://github.com/henryleou.keys
 
     - copy:
         src: charter-school-notebook-server
