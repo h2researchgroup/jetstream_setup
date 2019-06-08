@@ -172,9 +172,6 @@
         user: halmiller
         state: present
         key: https://github.com/halmiller.keys
-    - authorized_key:
-        user: frankchen
-        state: present
     - authorized_key: 
         user: kwalia
         state: present
