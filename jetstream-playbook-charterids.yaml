@@ -92,12 +92,6 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: frankchen
-        uid: 1016
-        comment: "Frank Chen"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
         name: yoonsunghong
         uid: 1012
         comment: "Yoon Sung Hong"
@@ -116,9 +110,9 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: henryleou
-        uid: 1021
-        comment: "Henry Leou"
+        name: madeleinepeng
+        uid: 1022
+        comment: "Madeleine Peng"
         groups: users,admin,docker
         shell: /bin/bash        
 
@@ -181,9 +175,9 @@
         state: present
         key: https://github.com/Annanguyenn.keys
     - authorized_key: 
-        user: henryleou
+        user: madeleinepeng
         state: present
-        key: https://github.com/henryleou.keys
+        key: https://github.com/madeleine-peng.keys
 
     - copy:
         src: charter-school-notebook-server
