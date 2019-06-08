@@ -9,6 +9,9 @@ apt-get install python3
 apt-get install python3-pip || curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
 pip3 install --upgrade pip
 
+# Install unzip for working with .zip files:
+apt-get install unzip
+
 # Docker environment:
 #apt-get install docker-machine
 #docker-machine create default
@@ -43,7 +46,7 @@ byobu-enable # Make sure window management software is turned on
 # Permissive folders so apprentices & researchers can open & edit & save files
 chmod 1777 /vol_b/data/*
 chmod 1777 /vol_b/data/*/*
-chmod 1777 /vol_b_data/*/*/*
+chmod 1777 /vol_b/data/*/*/*
 
 # Setting up git-LFS (TO DO: run this only for organization repos):
 #curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -65,9 +68,11 @@ END
 import_NLP_tools
 
 # Set user permissions with custom playbook:
-ansible-playbook jetstream-playbook.yaml
+ansible-playbook jetstream-playbook-jstor.yaml
 
 # Initialize git
 git config --global credential.helper 'cache --timeout=10800' # Make GitHub more efficient by caching credentials for three hours, requires less username & PW typing
 git config --global push.default simple # Configure simple git push
 
+# Prep for RStudio-Server:
+bash init_RStudio.sh
