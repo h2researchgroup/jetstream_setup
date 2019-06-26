@@ -105,13 +105,13 @@
         shell: /bin/bash
     - user:
         name: annanguyen
-        uid: 1020
+        uid: 1025
         comment: "Anna Nguyen"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
         name: madeleinepeng
-        uid: 1022
+        uid: 1024
         comment: "Madeleine Peng"
         groups: users,admin,docker
         shell: /bin/bash        
@@ -186,19 +186,19 @@
         group: root
         mode: 0755
 
-    - copy:
-        src: kill-charter-school-containers
-        dest: /usr/local/sbin/kill-charter-school-containers
-        owner: root
-        group: root
-        mode: 0755
+#    - copy:
+#        src: kill-charter-school-containers
+#        dest: /usr/local/sbin/kill-charter-school-containers
+#        owner: root
+#        group: root
+#        mode: 0755
 
-    - copy:
-        src: cron-kill-containers
-        dest: /etc/cron.d/kill-containers       
-        owner: root
-        group: root
-        mode: 0644
+#    - copy:
+#        src: cron-kill-containers
+#        dest: /etc/cron.d/kill-containers       
+#        owner: root
+#        group: root
+#        mode: 0644
 
   # This line keeps the procedure from stopping due to users already existing
   ignore_errors: yes
