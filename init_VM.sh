@@ -75,4 +75,4 @@ git config --global credential.helper 'cache --timeout=10800' # Make GitHub more
 git config --global push.default simple # Configure simple git push
 
 # Prep for RStudio-Server:
-bash init_RStudio.sh
+#bash init_RStudio.sh
