@@ -9,6 +9,9 @@ apt-get install python3
 apt-get install python3-pip || curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
 pip3 install --upgrade pip
 
+# Install basic R tools:
+apt install r-base-core
+
 # Install unzip for working with .zip files:
 apt-get install unzip
 
