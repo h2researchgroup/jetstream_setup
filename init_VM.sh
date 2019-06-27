@@ -12,9 +12,6 @@ pip3 install --upgrade pip
 # Install basic R tools:
 apt install r-base-core
 
-# Install unzip for working with .zip files:
-apt-get install unzip
-
 # Docker environment:
 #apt-get install docker-machine
 #docker-machine create default
@@ -44,6 +41,10 @@ pip3 install Cython
 # Shell utilities:
 apt install htop # More readable version of top, for process management
 apt install ncdu # Fast, comprehensive disk investigation
+apt-get install unzip # for working with zip files
+# lib4shell?
+# Install the many packages needed for R:
+apt-get install libxml2-dev openssl libssl-dev libmariadbclient-dev librsvg2-dev libpoppler-cpp-devn libwebp-dev libmagick++-dev cargo libpq-dev postgresql-common libgsl23 libgsl-dev r-cran-rgl libftgl2 libcgal-dev libglu1-mesa-dev libglu1-mesa-dev libx11-dev libfreetype6-dev
 byobu-enable # Make sure window management software is turned on
 
 # Permissive folders so apprentices & researchers can open & edit & save files
@@ -70,6 +71,8 @@ END
 }
 import_NLP_tools
 
+# Write & call function to install other key packages in R:
+
 # Set user permissions with custom playbook:
 ansible-playbook jetstream-playbook-jstor.yaml
 
@@ -79,3 +82,6 @@ git config --global push.default simple # Configure simple git push
 
 # Prep for RStudio-Server:
 #bash init_RStudio.sh
+
+# Install R packages:
+#bash install_r_packages_cmd.sh
