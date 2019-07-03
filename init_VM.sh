@@ -42,9 +42,6 @@ pip3 install Cython
 apt install htop # More readable version of top, for process management
 apt install ncdu # Fast, comprehensive disk investigation
 apt-get install unzip # for working with zip files
-# lib4shell?
-# Install the many packages needed for R:
-apt-get install libxml2-dev openssl libssl-dev libmariadbclient-dev librsvg2-dev libpoppler-cpp-devn libwebp-dev libmagick++-dev cargo libpq-dev postgresql-common libgsl23 libgsl-dev r-cran-rgl libftgl2 libcgal-dev libglu1-mesa-dev libglu1-mesa-dev libx11-dev libfreetype6-dev
 byobu-enable # Make sure window management software is turned on
 
 # Permissive folders so apprentices & researchers can open & edit & save files
