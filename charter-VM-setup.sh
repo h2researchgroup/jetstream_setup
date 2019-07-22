@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8
 
 # # Initializing new VM environment with docker, text analysis tools, etc.
@@ -38,7 +37,7 @@ pip3 install scipy
 pip3 install timeout_decorator
 pip3 install Cython
 
-# Shell utilities:
+# Install shell utilities:
 apt install htop # More readable version of top, for process management
 apt install ncdu # Fast, comprehensive disk investigation
 apt-get install unzip # for working with zip files
@@ -49,7 +48,7 @@ chmod 1777 /vol_b/data/*
 chmod 1777 /vol_b/data/*/*
 chmod 1777 /vol_b/data/*/*/*
 
-# Setting up git-LFS (TO DO: run this only for organization repos):
+# Set up git-LFS:
 #curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 #apt-get install git-lfs
 #git lfs install
@@ -71,7 +70,7 @@ import_NLP_tools
 # Write & call function to install other key packages in R:
 
 # Set user permissions with custom playbook:
-ansible-playbook jetstream-playbook-jstor.yaml
+ansible-playbook jetstream-playbook-charter.yaml
 
 # Initialize git
 git config --global credential.helper 'cache --timeout=10800' # Make GitHub more efficient by caching credentials for three hours, requires less username & PW typing
@@ -81,4 +80,4 @@ git config --global push.default simple # Configure simple git push
 #bash init_RStudio.sh
 
 # Install R packages:
-#bash install_r_packages_cmd.sh
+bash install_r_packages_cmd.sh
