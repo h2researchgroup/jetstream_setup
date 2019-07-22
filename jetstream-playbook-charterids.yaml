@@ -185,7 +185,7 @@
     - authorized_key:
         user: jamesjung
         state: present
-        key: https://github.com/jamesjung.keys
+        key: https://github.com/jameswsj10.keys
 
     - copy:
         src: charter-school-notebook-server
