@@ -70,7 +70,7 @@ import_NLP_tools
 # Write & call function to install other key packages in R:
 
 # Set user permissions with custom playbook:
-ansible-playbook jetstream-playbook-charter.yaml
+ansible-playbook jetstream-playbook-charterids.yaml
 
 # Initialize git
 git config --global credential.helper 'cache --timeout=10800' # Make GitHub more efficient by caching credentials for three hours, requires less username & PW typing
@@ -80,4 +80,4 @@ git config --global push.default simple # Configure simple git push
 #bash init_RStudio.sh
 
 # Install R packages:
-bash install_r_packages_cmd.sh
+bash R-env-setup.sh
