@@ -119,6 +119,7 @@
         name: jamesjung
         uid: 1027
         comment: "James Jung"
+        groups: users,admin,docker
         shell: /bin/bash
 
 #    - name: Set authorized key took from url
