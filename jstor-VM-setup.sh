@@ -36,6 +36,8 @@ pip3 install gensim
 pip3 install scipy
 pip3 install timeout_decorator
 pip3 install Cython
+pip3 install spacy
+python3 -m spacy download en
 
 # Shell utilities:
 apt install htop # More readable version of top, for process management
@@ -57,9 +59,10 @@ chmod 1777 /vol_b/data/*/*/*
 # Write and call function to import NLP tools from within Python:
 function import_NLP_tools {
 python3 - <<END
-import nltk
+import nltk, spacy
 nltk.download('punkt')
 nltk.download('stopwords')
+spacy download en
 END
 }
 import_NLP_tools

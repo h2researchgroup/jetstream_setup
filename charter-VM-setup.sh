@@ -36,6 +36,8 @@ pip3 install gensim
 pip3 install scipy
 pip3 install timeout_decorator
 pip3 install Cython
+pip3 install spacy
+python3 -m spacy download en
 
 # Install shell utilities:
 apt install htop # More readable version of top, for process management
@@ -70,7 +72,7 @@ import_NLP_tools
 # Write & call function to install other key packages in R:
 
 # Set user permissions with custom playbook:
-ansible-playbook jetstream-playbook-charterids.yaml
+#ansible-playbook jetstream-playbook-charterids.yaml
 
 # Initialize git
 git config --global credential.helper 'cache --timeout=10800' # Make GitHub more efficient by caching credentials for three hours, requires less username & PW typing
