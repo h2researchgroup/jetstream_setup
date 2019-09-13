@@ -61,6 +61,18 @@
         comment: "Rudy Venguswamy"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: hicleler
+        uid: 1024
+        comment: "Laiming Huang"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: rebeccaabraham
+        uid: 1025
+        comment: "Rebecca Abraham"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 
 #    - name: Set authorized key took from url
@@ -88,6 +100,14 @@
         user: rudyvenguswamy
         state: present
         key: https://github.com/RudyVenguswamy.keys
+    - authorized_key:
+        user: hicleler
+        state: present
+        key: https://github.com/hicleler.keys
+    - authorized_key:
+        user: rebeccaabraham
+        state: present
+        key: https://github.com/bcylincoln.keys
 
 
     - copy:
@@ -95,7 +115,7 @@
         dest: /usr/local/bin/charter-school-notebook-server
         owner: root
         group: root
-        mode: 0755
+        mode: 0777
 
     - copy:
         src: kill-charter-school-containers
