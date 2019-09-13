@@ -26,6 +26,7 @@ pip3 install https://github.com/slimkrazy/python-google-places/zipball/master
 pip3 install selenium
 pip3 install scrapy
 ansible-galaxy install cmprescott.chrome
+snap install hugo --channel=extended/stable # for web-dev
 
 # Processing text:
 pip3 install nltk
