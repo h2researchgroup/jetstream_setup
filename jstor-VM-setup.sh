@@ -64,10 +64,11 @@ chmod 1777 /vol_b/data/*/*
 chmod 1777 /vol_b/data/*/*/*
 
 # Set up git-LFS:
-#curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-#apt-get install git-lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+apt-get install git-lfs
+# Do the next two steps within whatever repo you want to set up git-LFS in:
 #git lfs install
-#git lfs track "*.csv" # Possibly add other file types here
+#git lfs track *.pkl *.h5 *.json *.zip # Possibly add other file types here
 
 # Write and call function to import NLP tools from within Python:
 function import_NLP_tools {

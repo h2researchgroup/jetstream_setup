@@ -8,11 +8,11 @@
 #R CMD INSTALL tidyverse_1.2.1.tar.gz
 
 # Install the many packages needed for R:
-apt-get install libxml2-dev openssl libssl-dev libmariadbclient-dev librsvg2-dev libpoppler-cpp-dev libwebp-dev libmagick++-dev cargo libpq-dev postgresql-common libgsl23 libgsl-dev r-cran-rgl libftgl2 libcgal-dev libglu1-mesa-dev libglu1-mesa-dev libx11-dev libfreetype6-dev
+apt-get install libxml2-dev openssl libssl-dev libmariadbclient-dev librsvg2-dev libpoppler-cpp-dev libwebp-dev libmagick++-dev cargo libpq-dev postgresql-common libgsl23 libgsl-dev r-cran-rgl libftgl2 libcgal-dev libglu1-mesa-dev libglu1-mesa-dev libx11-dev libfreetype6-dev libcurl4-openssl-dev
 
 # Write & call function to install R tools:
-function install_R_pkgs {
-R - <<END
+#function install_R_pkgs {
+R --save <<END
 install.packages("curl", dependencies=TRUE)
 install.packages("xml2", dependencies=TRUE)
 install.packages("devtools", dependencies=TRUE)
@@ -30,5 +30,5 @@ library(remotes); install_version("statnet.common", "4.1.4")
 install.packages("quanteda", dependencies=TRUE)
 install.packages("stm", dependencies=TRUE)
 END
-}
-install_R_pkgs
+#}
+#install_R_pkgs

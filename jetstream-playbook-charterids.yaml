@@ -38,51 +38,33 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: bradafza
-        uid: 1002
-        comment: "Brad Afzali"
+        name: frankwang
+        uid: 1028
+        comment: "Frank Wang"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: jiahuazou
-        uid: 1003
-        comment: "Jiahua Zou"
+        name: georgewu
+        uid: 1029
+        comment: "George Wu"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: sarahsolieman
-        uid: 1004
-        comment: "Sarah Solieman"
+        name: inderpalkaur
+        uid: 1030
+        comment: "Inderpal Kaur"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: JerryShi7
-        uid: 1005
-        comment: "Ji Shi"
+        name: xueyongliu
+        uid: 1031
+        comment: "Xueyong Liu"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
         name: kruing01
         uid: 1006
         comment: "Krutika Ingale"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: kaandgsy
-        uid: 1007
-        comment: "Kaan Dogusoy"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: bylei
-        uid: 1008
-        comment: "Brian Lei"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: halmiller
-        uid: 1018
-        comment: "Haley Miller"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
@@ -132,45 +114,33 @@
         state: present
         key: https://github.com/aculich.keys
     - authorized_key:
-        user: bradafza
+        user: frankwang
         state: present
-        key: https://github.com/bradafzali.keys
+        key: https://github.com/fwang084.keys
     - authorized_key:
-        user: jiahuazou
+        user: georgewu
         state: present
-        key: https://github.com/JiahuaZou.keys
+        key: https://github.com/wu-george.keys
     - authorized_key:
         user: yoonsunghong
         state: present
         key: https://github.com/yoonsunghong.keys
     - authorized_key:
-        user: sarahsolieman
+        user: inderpalkaur
         state: present
-        key: https://github.com/sarahsolieman.keys
+        key: https://github.com/ikaur9.keys
     - authorized_key: 
-        user: JerryShi7
+        user: xueyongliu
         state: present
-        key: https://github.com/JerryShi7.keys
+        key: https://github.com/XueYo.keys
     - authorized_key:   
         user: kruing01
         state: present
         key: https://github.com/krutikaingale.keys
     - authorized_key:
-        user: kaandgsy
-        state: present
-        key: https://github.com/kaandogusoy.keys
-    - authorized_key:
-        user: bylei
-        state: present
-        key: https://github.com/bylei.keys
-    - authorized_key:
         user: jennifer
         state: present
         key: https://github.com/Jenniferrrrrr.keys
-    - authorized_key:
-        user: halmiller
-        state: present
-        key: https://github.com/halmiller.keys
     - authorized_key: 
         user: kwalia
         state: present
@@ -193,7 +163,7 @@
         dest: /usr/local/bin/charter-school-notebook-server
         owner: root
         group: root
-        mode: 0775
+        mode: 0777
 
 #    - copy:
 #        src: kill-charter-school-containers
