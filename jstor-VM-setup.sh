@@ -3,6 +3,9 @@
 # # Initializing new VM environment with docker, text analysis tools, etc.
 # RUN THIS SCRIPT AS SUPER-USER, i.e: `sudo bash init_VM.sh`
 
+# Update Ubuntu's apt-get:
+apt-get update -y
+
 # Install latest python 3, pip, and pip3:
 apt-get install python3
 apt-get install python3-pip || curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
@@ -10,6 +13,16 @@ pip3 install --upgrade pip
 
 # Install basic R tools:
 apt install r-base-core
+
+# Install tools for Apache StandardTokenizer:a
+apt-get install python-dev python3-dev gcc libssl-doc build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev python-pip autoconf libtool pkg-config python-opengl python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 libssl-dev libpq-dev libxslt1-dev libldap2-dev libsasl2-dev python-dateutil python-docutils python-feedparser python-gdata python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-psycopg2 python-psutil python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi # requirements
+apt-get install ant ivy # Install Apache Ant and Apache Ivy
+apt-get install openjdk-11-jdk-headless # Install Java Compiler
+wget http://mirrors.gigenet.com/apache/lucene/pylucene/pylucene-8.1.1-src.tar.gz # download pylucene
+tar -xzvf pylucene-8.1.1-src.tar.gz # unpack
+ # NOTE: In page 2 of jcc/setup.py, change /usr/lib/jvm/java-8-oracle/ -> /usr/lib/jvm/java-11-openjdk-amd64/ or you will get `directory does not exist` error
+python3 pylucene-8.1.1/jcc/setup.py build
+python3 pylucene-8.1.1/jcc/setup.py install
 
 # Docker environment:
 #apt-get install docker-machine
