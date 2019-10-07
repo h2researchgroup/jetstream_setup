@@ -20,7 +20,11 @@ apt-get install ant ivy # Install Apache Ant and Apache Ivy
 apt-get install openjdk-11-jdk-headless # Install Java Compiler
 wget http://mirrors.gigenet.com/apache/lucene/pylucene/pylucene-8.1.1-src.tar.gz # download pylucene
 tar -xzvf pylucene-8.1.1-src.tar.gz # unpack
- # NOTE: In page 2 of jcc/setup.py, change /usr/lib/jvm/java-8-oracle/ -> /usr/lib/jvm/java-11-openjdk-amd64/ or you will get `directory does not exist` error
+# NOTE 1: On page 2 of jcc/setup.py, change /usr/lib/jvm/java-8-oracle/ -> /usr/lib/jvm/java-11-openjdk-amd64/ or you will get `directory does not exist` error
+# NOTE 2: On page 4 of jcc/setup.y, change LFLAGS to the following (if using 64-bit CPUs) or you will get 'collect2: error: ld returned 1 exit status': 
+# 'linux/x86_64': ['-L%(linux)slib/' %(JDK), '-ljava',
+#                  '-L%(linux)slib/server' %(JDK), '-ljvm',
+#                  '-Wl,-rpath=%(linux)slib/:%(linux)slib/server' %(JDK)],
 python3 pylucene-8.1.1/jcc/setup.py build
 python3 pylucene-8.1.1/jcc/setup.py install
 
@@ -81,11 +85,12 @@ END
 }
 import_NLP_tools
 
-# Write & call function to install other key packages in R:
-
 # Set user permissions with custom playbook:
 ansible-playbook jetstream-playbook-jstor.yaml
 
 # Initialize git
 git config --global credential.helper 'cache --timeout=10800' # Make GitHub more efficient by caching credentials for three hours, requires less username & PW typing
 git config --global push.default simple # Configure simple git push
+
+# Install PyLucene for Apache StandardTokenizer:
+bash pylucene-setup.sh
