@@ -20,3 +20,14 @@ tar -xzvf pylucene-8.1.1-src.tar.gz # unpack
 python3 pylucene-8.1.1/jcc/setup.py build
 python3 pylucene-8.1.1/jcc/setup.py install
 
+# Edit pylucene-8.1.1/Makefile as follows:
+# unedit lines for "Linux" on page 2 (see instructions at top of Makefile, edit them so they are like the following (without the comment marks):
+
+# Linux     (Debian Jessie 64-bit, Python 3.4.2, Oracle Java 1.8
+# Be sure to also set JDK['linux'] in jcc's setup.py to the JAVA_HOME value
+# used below for ANT (and rebuild jcc after changing it).
+#PREFIX_PYTHON=/usr
+#ANT=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/ /usr/bin/ant
+#PYTHON=$(PREFIX_PYTHON)/bin/python3
+#JCC=$(PYTHON) -m jcc --shared
+#NUM_FILES=10
