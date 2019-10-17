@@ -14,19 +14,8 @@ pip3 install --upgrade pip
 # Install basic R tools:
 apt install r-base-core
 
-# Install tools for Apache StandardTokenizer:a
-apt-get install python-dev python3-dev gcc libssl-doc build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev python-pip autoconf libtool pkg-config python-opengl python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 libssl-dev libpq-dev libxslt1-dev libldap2-dev libsasl2-dev python-dateutil python-docutils python-feedparser python-gdata python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-psycopg2 python-psutil python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi # requirements
-apt-get install ant ivy # Install Apache Ant and Apache Ivy
-apt-get install openjdk-11-jdk-headless # Install Java Compiler
-wget http://mirrors.gigenet.com/apache/lucene/pylucene/pylucene-8.1.1-src.tar.gz # download pylucene
-tar -xzvf pylucene-8.1.1-src.tar.gz # unpack
-# NOTE 1: On page 2 of jcc/setup.py, change /usr/lib/jvm/java-8-oracle/ -> /usr/lib/jvm/java-11-openjdk-amd64/ or you will get `directory does not exist` error
-# NOTE 2: On page 4 of jcc/setup.y, change LFLAGS to the following (if using 64-bit CPUs) or you will get 'collect2: error: ld returned 1 exit status': 
-# 'linux/x86_64': ['-L%(linux)slib/' %(JDK), '-ljava',
-#                  '-L%(linux)slib/server' %(JDK), '-ljvm',
-#                  '-Wl,-rpath=%(linux)slib/:%(linux)slib/server' %(JDK)],
-python3 pylucene-8.1.1/jcc/setup.py build
-python3 pylucene-8.1.1/jcc/setup.py install
+# Install Apache Ant and Apache Ivy, Java Compiler - requisites for Apache StandardTokenizer:
+apt-get install ant ivy openjdk-11-jdk-headless
 
 # Docker environment:
 #apt-get install docker-machine
