@@ -103,6 +103,12 @@
         comment: "James Jung"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: aplanger
+        uid: 1032
+        comment: "Ariel Langer"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 #    - name: Set authorized key took from url
     - authorized_key:
@@ -157,6 +163,10 @@
         user: jamesjung
         state: present
         key: https://github.com/jameswsj10.keys
+    - authorized_key:
+        user: aplanger
+        state: present
+        key: https://github.com/aplanger.keys
 
     - copy:
         src: charter-school-notebook-server
