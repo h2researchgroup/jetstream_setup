@@ -124,12 +124,15 @@
         group: root
         mode: 0755
 
-    - copy:
-        src: cron-kill-containers
-        dest: /etc/cron.d/kill-containers       
-        owner: root
-        group: root
-        mode: 0644
-
+  #  The following code will automatically kill all docker containers every night at 3 or 4 am. 
+  #  Un-comment then run this script to activate this functionality.
+  #
+  #  - copy:
+  #       src: cron-kill-containers
+  #       dest: /etc/cron.d/kill-containers       
+  #       owner: root
+  #       group: root
+  #       mode: 0644
+ 
   # This line keeps the procedure from stopping due to users already existing
   ignore_errors: yes
