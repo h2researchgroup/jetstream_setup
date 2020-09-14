@@ -92,7 +92,7 @@
     - authorized_key:   
        user: pmasaya
        state: present
-        key: https://github.com/pmasaya.keys
+       key: https://github.com/pmasaya.keys
 #    - authorized_key:
 #        user: 
 #        state: present
