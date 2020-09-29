@@ -52,9 +52,9 @@ apt-get install unzip # for working with zip files
 byobu-enable # Make sure window management software is turned on
 
 # Permissive folders so apprentices & researchers can open & edit & save files
-chmod 1777 /vol_b/data/*
-chmod 1777 /vol_b/data/*/*
-chmod 1777 /vol_b/data/*/*/*
+#chmod 1777 /vol_b/data/*
+#chmod 1777 /vol_b/data/*/*
+#chmod 1777 /vol_b/data/*/*/*
 
 # Set up git-LFS:
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
