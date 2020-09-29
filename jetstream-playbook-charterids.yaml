@@ -38,77 +38,35 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: frankwang
-        uid: 1028
-        comment: "Frank Wang"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: georgewu
-        uid: 1029
-        comment: "George Wu"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: inderpalkaur
-        uid: 1030
-        comment: "Inderpal Kaur"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: xueyongliu
-        uid: 1031
-        comment: "Xueyong Liu"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: kruing01
-        uid: 1006
-        comment: "Krutika Ingale"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: jennifer
-        uid: 1015
-        comment: "Jennifer Huang"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
         name: yoonsunghong
-        uid: 1012
+        uid: 1002
         comment: "Yoon Sung Hong"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: kwalia
-        uid: 1017
-        comment: "Kanika Ahluwalia"
+        name: yangchen
+        uid: 1003
+        comment: "Yang Chen"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: madeleinepeng
-        uid: 1024
-        comment: "Madeleine Peng"
-        groups: users,admin,docker
-        shell: /bin/bash        
-    - user:
-        name: violetyao
-        uid: 1026
-        comment: "Violet Yao"
+        name: drewchen
+        uid: 1004
+        comment: "Andrew Chen"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: jamesjung
-        uid: 1027
-        comment: "James Jung"
+        name: pmasaya
+        uid: 1005
+        comment: "Psalm Masaya"
         groups: users,admin,docker
         shell: /bin/bash
-    - user:
-        name: aplanger
-        uid: 1032
-        comment: "Ariel Langer"
-        groups: users,admin,docker
-        shell: /bin/bash
+#    - user:
+#        name: 
+#        uid: 1006
+#        comment: ""
+#        groups: users,admin,docker
+#        shell: /bin/bash
 
 #    - name: Set authorized key took from url
     - authorized_key:
@@ -120,53 +78,25 @@
         state: present
         key: https://github.com/aculich.keys
     - authorized_key:
-        user: frankwang
-        state: present
-        key: https://github.com/fwang084.keys
-    - authorized_key:
-        user: georgewu
-        state: present
-        key: https://github.com/wu-george.keys
-    - authorized_key:
         user: yoonsunghong
         state: present
         key: https://github.com/yoonsunghong.keys
     - authorized_key:
-        user: inderpalkaur
+        user: yangchen
         state: present
-        key: https://github.com/ikaur9.keys
+        key: https://github.com/Ca11me1ce.keys
     - authorized_key: 
-        user: xueyongliu
+        user: drewchen
         state: present
-        key: https://github.com/XueYo.keys
+        key: https://github.com/drew-chen.keys
     - authorized_key:   
-        user: kruing01
-        state: present
-        key: https://github.com/krutikaingale.keys
-    - authorized_key:
-        user: jennifer
-        state: present
-        key: https://github.com/Jenniferrrrrr.keys
-    - authorized_key: 
-        user: kwalia
-        state: present
-        key: https://github.com/kwalia1999.keys
-    - authorized_key: 
-        user: madeleinepeng
-        state: present
-        key: https://github.com/madeleine-peng.keys
-    - authorized_key:
-        user: violetyao
-        state: present
-        key: https://github.com/violetyao.keys
-    - authorized_key:
-        user: jamesjung
-        state: present
-        key: https://github.com/jameswsj10.keys
-    - authorized_key:
-        user: aplanger
-        state: present
-        key: https://github.com/aplanger.keys
+       user: pmasaya
+       state: present
+       key: https://github.com/pmasaya.keys
+#    - authorized_key:
+#        user: 
+#        state: present
+#        key: https://github.com/.keys
 
     - copy:
         src: charter-school-notebook-server
@@ -175,19 +105,22 @@
         group: root
         mode: 0777
 
-#    - copy:
-#        src: kill-charter-school-containers
-#        dest: /usr/local/sbin/kill-charter-school-containers
-#        owner: root
-#        group: root
-#        mode: 0755
+    - copy:
+        src: kill-charter-school-containers
+        dest: /usr/local/sbin/kill-charter-school-containers
+        owner: root
+        group: root
+        mode: 0755
 
-#    - copy:
-#        src: cron-kill-containers
-#        dest: /etc/cron.d/kill-containers       
-#        owner: root
-#        group: root
-#        mode: 0644
+  #  The following code will automatically kill all docker containers every night at 3 or 4 am.
+  #  Un-comment then run this script to activate this functionality.
+  #
+  # - copy:
+  #    src: cron-kill-containers
+  #    dest: /etc/cron.d/kill-containers       
+  #    owner: root
+  #    group: root
+  #    mode: 0644
 
   # This line keeps the procedure from stopping due to users already existing
   ignore_errors: yes
