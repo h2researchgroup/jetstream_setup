@@ -1,0 +1,15 @@
+---
+# run this script as: `sudo ansible-playbook jetstream-playbook.yaml`
+
+- hosts: localhost
+  tasks:
+
+    - copy:
+        src: charter-school-notebook-server
+        dest: /usr/local/bin/charter-school-notebook-server
+        owner: root
+        group: root
+        mode: 0777
+
+  # This line keeps the procedure from stopping due to users already existing
+  ignore_errors: yes
