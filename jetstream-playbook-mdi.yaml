@@ -31,6 +31,3 @@
         owner: root
         group: root
         mode: 0777
-
-  # This line keeps the procedure from stopping due to users already existing
-  ignore_errors: yes
