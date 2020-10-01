@@ -1,12 +1,12 @@
 ---
-# run this script as: `sudo ansible-playbook jetstream-playbook.yaml`
+# run this script as: `sudo ansible-playbook jetstream-playbook-mdi.yaml`
 
 - hosts: localhost
   tasks:
 
     - copy:
-        src: charter-school-notebook-server
-        dest: /usr/local/bin/charter-school-notebook-server
+        src: jupyter-notebook-server
+        dest: /usr/local/bin/jupyter-notebook-server
         owner: root
         group: root
         mode: 0777
