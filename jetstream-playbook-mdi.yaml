@@ -1,6 +1,9 @@
 ---
 # INSTRUCTIONS FOR CREATING JUPYTER NOTEBOOK SERVER ON MDI SERVER:
 #
+# 0. On server, update line 2 in the `jupyter notebook server` script (in this same directory) with your own netid, as in:
+# VOL=/home/jh2260 --> VOL=/home/YOUR_NETID
+#
 # 1. On server, run this script as: `sudo ansible-playbook jetstream-playbook-mdi.yaml`
 #
 # 2. On server, call `jupyter-notebook-server` (now a recognized command). 
@@ -17,6 +20,7 @@
 # 4. In web browser, access jupyter notebook server by going to:
 # localhost:8888
 # Use the token to validate (see step 2). 
+
 
 - hosts: localhost
   tasks:
