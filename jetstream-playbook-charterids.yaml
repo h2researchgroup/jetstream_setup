@@ -50,9 +50,15 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: drewchen
-        uid: 1004
-        comment: "Andrew Chen"
+        name: gsangiolo
+        uid: 1006
+        comment: "George Sangiolo"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: tongxiang
+        uid: 1007
+        comment: "Tong Xiang"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
@@ -86,17 +92,17 @@
         state: present
         key: https://github.com/Ca11me1ce.keys
     - authorized_key: 
-        user: drewchen
+        user: gsangiolo
         state: present
-        key: https://github.com/drew-chen.keys
+        key: https://github.com/gsangiolo.keys
+    - authorized_key: 
+        user: tongxiang
+        state: present
+        key: https://github.com/mathfather.keys
     - authorized_key:   
        user: pmasaya
        state: present
        key: https://github.com/pmasaya.keys
-#    - authorized_key:
-#        user: 
-#        state: present
-#        key: https://github.com/.keys
 
     - copy:
         src: charter-school-notebook-server
