@@ -62,6 +62,18 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
+        name: artemtkachuk
+        uid: 1008
+        comment: "Artem Tkachuk"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: pranavbhasin
+        uid: 1009
+        comment: "Pranav Bhasin"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
         name: pmasaya
         uid: 1005
         comment: "Psalm Masaya"
@@ -99,6 +111,14 @@
         user: tongxiang
         state: present
         key: https://github.com/mathfather.keys
+    - authorized_key:
+        user: artemtkachuk
+        state: present
+        key: https://github.com/artem-tkachuk.keys
+    - authorized_key:
+        user: pranavbhasin
+        state: present
+        key: https://github.com/PranavBhasin001.keys
     - authorized_key:   
        user: pmasaya
        state: present
