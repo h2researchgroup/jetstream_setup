@@ -44,12 +44,6 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: yangchen
-        uid: 1003
-        comment: "Yang Chen"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
         name: gsangiolo
         uid: 1006
         comment: "George Sangiolo"
@@ -79,12 +73,36 @@
         comment: "Psalm Masaya"
         groups: users,admin,docker
         shell: /bin/bash
-#    - user:
-#        name: 
-#        uid: 1006
-#        comment: ""
-#        groups: users,admin,docker
-#        shell: /bin/bash
+    - user:
+        name: czhang
+        uid: 1010
+        comment: "Charlie Zhang"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: yingliu
+        uid: 1011
+        comment: "Ying Liu"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: alyssafu
+        uid: 1012
+        comment: "Alyssa Fu"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: lunava
+        uid: 1013
+        comment: "Luis Navarrete"
+        groups: users,admin,docker
+        shell: /bin/bash
+    - user:
+        name: devbali
+        uid: 1014
+        comment: "Dev Bali"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 #    - name: Set authorized key took from url
     - authorized_key:
@@ -99,10 +117,6 @@
         user: yoonsunghong
         state: present
         key: https://github.com/yoonsunghong.keys
-    - authorized_key:
-        user: yangchen
-        state: present
-        key: https://github.com/Ca11me1ce.keys
     - authorized_key: 
         user: gsangiolo
         state: present
@@ -123,6 +137,26 @@
        user: pmasaya
        state: present
        key: https://github.com/pmasaya.keys
+    - authorized_key:
+       user: czhang
+       state: present
+       key: https://github.com/ccxzhang.keys
+    - authorized_key:
+       user: yingliu
+       state: present
+       key: https://github.com/yingliu1206.keys
+    - authorized_key:
+       user: alyssafu
+       state: present
+       key: https://github.com/Alyssaaa7.keys
+    - authorized_key:
+       user: lunava
+       state: present
+       key: https://github.com/lunava.keys
+    - authorized_key:
+       user: devbali
+       state: present
+       key: https://github.com/devbali.keys
 
     - copy:
         src: charter-school-notebook-server
