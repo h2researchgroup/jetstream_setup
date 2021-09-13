@@ -50,27 +50,15 @@
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: zekaifan
-        uid: 1022
-        comment: "Zekai Fan"
+        name: thomaslu
+        uid: 1026
+        comment: "Thomas Lu"
         groups: users,admin,docker
         shell: /bin/bash
     - user:
-        name: rudyvenguswamy
-        uid: 1023
-        comment: "Rudy Venguswamy"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: hicleler
-        uid: 1024
-        comment: "Laiming Huang"
-        groups: users,admin,docker
-        shell: /bin/bash
-    - user:
-        name: rebeccaabraham
-        uid: 1025
-        comment: "Rebecca Abraham"
+        name: nancyxu
+        uid: 1027
+        comment: "Nancy Xu"
         groups: users,admin,docker
         shell: /bin/bash
 
@@ -93,21 +81,13 @@
         state: present
         key: https://github.com/yoonsunghong.keys
     - authorized_key:
-        user: zekaifan
+        user: thomaslu
         state: present
-        key: https://github.com/babybear68.keys
+        key: https://github.com/thomaslu2000.keys
     - authorized_key:
-        user: rudyvenguswamy
+        user: nancyxu
         state: present
-        key: https://github.com/RudyVenguswamy.keys
-    - authorized_key:
-        user: hicleler
-        state: present
-        key: https://github.com/hicleler.keys
-    - authorized_key:
-        user: rebeccaabraham
-        state: present
-        key: https://github.com/bcylincoln.keys
+        key: https://github.com/Nancy078.keys
 
 
     - copy:
