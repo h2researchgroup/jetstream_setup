@@ -103,6 +103,12 @@
         comment: "Dev Bali"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: ralward
+        uid: 1015
+        comment: "Robert Alward"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 #    - name: Set authorized key took from url
     - authorized_key:
@@ -157,6 +163,10 @@
        user: devbali
        state: present
        key: https://github.com/devbali.keys
+    - authorized_key:
+       user: ralward
+       state: present
+       key: https://github.com/ThaiHipster.keys
 
     - copy:
         src: charter-school-notebook-server
