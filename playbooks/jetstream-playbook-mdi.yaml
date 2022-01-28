@@ -26,7 +26,7 @@
   tasks:
 
     - copy:
-        src: jupyter-notebook-server
+        src: ../notebook_servers/jupyter-notebook-server
         dest: /usr/local/bin/jupyter-notebook-server
         owner: root
         group: root
