@@ -55,6 +55,12 @@
         comment: "Angela Jing"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: silla
+        uid: 1030
+        comment: "Sai Srujana Illa"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 
 #    - name: Set authorized key took from url
@@ -78,6 +84,10 @@
         user: ajing
         state: present
         key: https://github.com/angelajing0705.keys
+    - authorized_key:
+        user: silla
+        state: present
+        key: https://github.com/Srujanailla.keys
 
 
     - copy:
@@ -88,7 +98,7 @@
         mode: 0777
 
     - copy:
-        src: ../notebook_servers/kill-notebook-server-containers
+        src: ../notebook_servers/kill-charter-school-containers
         dest: /usr/local/sbin/kill-notebook-server-containers
         owner: root
         group: root
