@@ -61,6 +61,12 @@
         comment: "Nancy Xu"
         groups: users,admin,docker
         shell: /bin/bash
+    - user:
+        name: deepakragu
+        uid: 1028
+        comment: "Nancy Xu"
+        groups: users,admin,docker
+        shell: /bin/bash
 
 
 #    - name: Set authorized key took from url
@@ -88,6 +94,10 @@
         user: nancyxu
         state: present
         key: https://github.com/Nancy078.keys
+    - authorized_key:
+        user: deepakragu
+        state: present
+        key: https://github.com/deepakragu.keys
 
 
     - copy:
